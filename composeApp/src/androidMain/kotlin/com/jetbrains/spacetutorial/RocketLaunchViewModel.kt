@@ -8,14 +8,9 @@ import com.jetbrains.spacetutorial.entity.RocketLaunch
 import kotlinx.coroutines.launch
 
 class RocketLaunchViewModel(private val sdk: SpaceXSDK) : ViewModel() {
-
     private val _state = mutableStateOf(RocketLaunchScreenState())
     val state: State<RocketLaunchScreenState> = _state
-
-    init {
-        loadLaunches()
-    }
-
+    init { loadLaunches() }
     fun loadLaunches() {
         viewModelScope.launch {
             _state.value = _state.value.copy(isLoading = true, launches = emptyList())
