@@ -10,7 +10,6 @@ import org.koin.dsl.module
 
 class KoinHelper : KoinComponent {
     private val sdk: SpaceXSDK by inject<SpaceXSDK>()
-
     suspend fun getLaunches(forceReload: Boolean): List<RocketLaunch> {
         return sdk.getLaunches(forceReload = forceReload)
     }

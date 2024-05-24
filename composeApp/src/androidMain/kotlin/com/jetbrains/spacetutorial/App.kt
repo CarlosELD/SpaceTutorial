@@ -30,9 +30,7 @@ import com.jetbrains.spacetutorial.theme.app_theme_successful
 import com.jetbrains.spacetutorial.theme.app_theme_unsuccessful
 import org.koin.androidx.compose.koinViewModel
 
-@OptIn(
-    ExperimentalMaterial3Api::class
-)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun App() {
     val viewModel = koinViewModel<RocketLaunchViewModel>()
@@ -92,7 +90,6 @@ fun App() {
                         }
                     }
                 }
-
                 PullToRefreshContainer(
                     state = pullToRefreshState,
                     modifier = Modifier.align(Alignment.TopCenter)
